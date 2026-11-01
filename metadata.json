@@ -1,0 +1,6 @@
+{
+  "name": "Khulasa — Citizen RTI Companion",
+  "description": "Draft Right to Information (RTI) applications in English or Hindi, match Public Information Officers, track the 30-day statutory Silence Clock, auto-draft First and Second Appeals, and check department responsiveness. Built by Team Vanta.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

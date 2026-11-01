@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gazette-navy: #002349;
+    --gazette-deep-navy: #00142b;
+    --gazette-gold: #c9a24b;
+    --gazette-deep-gold: #957c3d;
+    --gazette-mist: #e5edf1;
+    --gazette-page: #fafbfc;
+    --gazette-ink: #0b1b33;
+    --stamp-red: #c8341f;
+    --status-replied: #2e7d4f;
+    --status-rejected: #c8341f;
+    --status-ignored: #7a8794;
+  }
+
+  html {
+    background-color: var(--gazette-page);
+    color: var(--gazette-ink);
+    font-family: "Inter", "Tiro Devanagari Hindi", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  /* Use Tiro Devanagari Hindi for all Hindi text & set Hindi headline line-height to 1.25 */
+  html[lang="hi"],
+  [lang="hi"] {
+    font-family: "Tiro Devanagari Hindi", "Inter", serif;
+  }
+
+  html[lang="hi"] .font-body,
+  [lang="hi"] .font-body,
+  html[lang="hi"] .font-editorial,
+  [lang="hi"] .font-editorial {
+    font-family: "Tiro Devanagari Hindi", "Fraunces", Georgia, serif;
+  }
+
+  html[lang="hi"] h1,
+  html[lang="hi"] h2,
+  html[lang="hi"] h3,
+  html[lang="hi"] .hero-display-size,
+  html[lang="hi"] .section-display-size,
+  [lang="hi"] .hero-display-size,
+  [lang="hi"] .section-display-size {
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body {
+    background-color: var(--gazette-page);
+    color: var(--gazette-ink);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* 3% opacity subtle grain texture overlay across light & dark Gazette sections */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='gazetteGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%2364748b' filter='url(%23gazetteGrain)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background-color: rgba(201, 162, 75, 0.32);
+    color: var(--gazette-ink);
+  }
+}
+
+.font-editorial {
+  font-family: "Fraunces", "Tiro Devanagari Hindi", Georgia, serif;
+}
+
+.font-mono-file {
+  font-family: "IBM Plex Mono", "Tiro Devanagari Hindi", ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-body {
+  font-family: "Inter", "Tiro Devanagari Hindi", system-ui, sans-serif;
+}
+
+.hero-display-size {
+  font-size: clamp(2.5rem, 7.6vw, 6.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.section-display-size {
+  font-size: clamp(2.2rem, 5.4vw, 5rem);
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+}
+
+.story-numeral {
+  font-size: clamp(3.25rem, 6.8vw, 6.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+/* Official Rubber Stamp Frame with Subtle Ink-Bleed Shadow (Neutral for Gold, Navy, Green & Red) */
+.rubber-stamp {
+  font-family: "IBM Plex Mono", "Tiro Devanagari Hindi", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  border: 2.5px solid currentColor;
+  outline: 1px solid currentColor;
+  outline-offset: -5px;
+  padding: 0.35rem 0.85rem;
+  display: inline-block;
+  user-select: none;
+  text-shadow: 0 0 1.1px currentColor;
+  box-shadow:
+    0 3px 10px -2px rgba(0, 20, 43, 0.16),
+    inset 0 0 2px rgba(0, 20, 43, 0.1);
+}
+
+/* Manila Folder Top Tab Geometry */
+.manila-tab {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 100%, 0 100%);
+}
+
+/* Accessible focus ring on interactive controls without drawing boxes around ruled inputs */
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 2px solid #c9a24b;
+  outline-offset: 3px;
+}
+
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
