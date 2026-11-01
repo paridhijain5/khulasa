@@ -7,10 +7,6 @@ Khulasa is an RTI (Right to Information) companion for ordinary citizens in Indi
 Built by **Team Vanta** for **NexHack 3.0: Build What's Next**
 Track: **Smart Society and Social Impact**
 
-- **Live demo:** YOUR-VERCEL-LINK
-- **Demo video:** YOUR-YOUTUBE-LINK
-
-![Khulasa home screen](screenshots/home.png)
 
 ---
 
@@ -28,8 +24,6 @@ Most people never file an RTI. They don't know which office to write to, how to 
 6. **Responsiveness Board.** Log an anonymous outcome (replied, rejected, ignored) and see departments ranked by response rate.
 7. **Hindi and English** interface.
 
-![Silence Clock](screenshots/clock.png)
-![Board](screenshots/board.png)
 
 ## Tech stack
 
